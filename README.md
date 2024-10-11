@@ -17,7 +17,7 @@ To run this app on your local machine
 
 - Clone this repository
 - `pip install -r requirements.txt`
-- run `main.ipynb` to export `.pkl` files
+- Run `main.py` to export `.pkl` files
 
 # App feature
 
