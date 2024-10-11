@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import pickle
 
 st.set_page_config(
     layout="wide",
@@ -49,6 +50,44 @@ if selected == "Rek":
     st.markdown("""
                 <h1 style="color: #3DD56D; text-align: center;">I'm 🤖 Rek</h1>
                 """, unsafe_allow_html=True)
+    st.markdown("""
+                <p style="text-align: center;">Anime recommendation companion</p>
+                """, unsafe_allow_html=True)
+    
+    animes = pickle.load(open('anime_list.pkl', 'rb'))
+    similarity = pickle.load(open('similarity.pkl', 'rb'))
+    anime_list=animes['name'].values
+    
+    selectvalue=st.selectbox(" ",anime_list, label_visibility="hidden")
+    
+    def recommend(anime):
+        index = animes[animes['name']==anime].index[0]
+        distance = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda vector:vector[1])
+        recommend_anime=[]
+        anime_poster=[]
+        for i in distance[1:6]:
+            recommend_anime.append(animes.iloc[i[0]]['name'])
+            anime_poster.append(animes.iloc[i[0]]['img_url'])
+        return recommend_anime, anime_poster
+    
+    if selectvalue:
+         anime_name, anime_cover = recommend(selectvalue)
+         col1,col2,col3,col4,col5=st.columns(5)
+         with col1:
+              st.text(anime_name[0])
+              st.image(anime_cover[0])
+         with col2:
+              st.text(anime_name[1])
+              st.image(anime_cover[1])
+         with col3:
+              st.text(anime_name[2])
+              st.image(anime_cover[2])
+         with col4:
+              st.text(anime_name[3])
+              st.image(anime_cover[3])
+         with col5:
+              st.text(anime_name[4])
+              st.image(anime_cover[4])
 if selected == "Contact":
     
         st.header(":email: GET IN TOUCH")
