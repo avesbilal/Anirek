@@ -5,7 +5,7 @@ import pickle
 st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
-    page_title="AnireK",
+    page_title="Anirek",
     page_icon=":robot_face:",
 )
 
@@ -56,17 +56,17 @@ if selected == "Rek":
     
     animes = pickle.load(open('anime_list.pkl', 'rb'))
     similarity = pickle.load(open('similarity.pkl', 'rb'))
-    anime_list=animes['name'].values
+    anime_list=animes['title'].values
     
     selectvalue=st.selectbox(" ",anime_list, label_visibility="hidden")
     
     def recommend(anime):
-        index = animes[animes['name']==anime].index[0]
+        index = animes[animes['title']==anime].index[0]
         distance = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda vector:vector[1])
         recommend_anime=[]
         anime_poster=[]
         for i in distance[1:6]:
-            recommend_anime.append(animes.iloc[i[0]]['name'])
+            recommend_anime.append(animes.iloc[i[0]]['title'])
             anime_poster.append(animes.iloc[i[0]]['img_url'])
         return recommend_anime, anime_poster
     
