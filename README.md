@@ -1,10 +1,10 @@
 
 # Table of Contents
 
- * [Introduction](#introduction)
- * [Getting Started](#getting-started)
- * [Features](#features)
- * [How it works](#how-it-works)
+ - [Introduction](#introduction)
+ - [Getting Started](#getting-started)
+ - [Features](#features)
+ - [How it works](#how-it-works)
 
 # Introduction
 
