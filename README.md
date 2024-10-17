@@ -10,7 +10,7 @@
 
 **Anime** is a form of hand-drawn or computer-generated animation originating from Japan. In terms of genres, there are more than **34,211+** anime listed on [myanimelist.net](https://myanimelist.net/anime.php). The problem is the difficulty in finding anime that aligns with individual viewer preferences due to the vast number of options available.
 
-<p style="text-align:center; font-size:15px;"><a href="https://ani-rek.streamlit.app/"><u>Go to website</u></a></p>
+<p style="text-align:center; font-size:15px;"><a href="https://anirek.streamlit.app/"><u>Go to website</u></a></p>
 
 ![CleanShot 2024-10-11 at 11 28 39@2x](https://github.com/user-attachments/assets/4486e727-2c4b-43df-add7-2cd2b4781311)
 
