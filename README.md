@@ -40,10 +40,6 @@
 ##### To run this app on your local machine
 
 ```sh
-$ git clone https://github.com/xavesx/Anirek.git
-$ cd Anirek
-$ pip install -r requirements.txt
-$ python main.py
-$ streamlit run app.py
+git clone https://github.com/xavesx/Anirek.git && cd Anirek && pip install -r requirements.txt && python main.py && streamlit run app.py
 ```
 </details>
